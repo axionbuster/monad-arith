@@ -1,26 +1,38 @@
 cabal-version:      3.0
 name:               monad-arith
 version:            0.1.0.0
--- synopsis:
--- description:
+category:           Control, Math
+synopsis:           Arithmetic lifted to Functor, Applicative, and Monad
+description:        Define the 'Arithmetic' newtype which wraps a functor and \
+                    then lifts arithmetic type class instances (such as those \
+                    that define (+)) to make writing numeric monadic code \
+                    easier. \
+                    \
+                    Also define a few lifted type classes (e.g., \
+                    `EqM` and `RealM`) as some type classes require value \
+                    extraction, which can't be done for most monads. \
+                    \
+                    Or, you may import the sole 'Num' instance for all \
+                    'Applicative' functors using \
+                    `Control.Arithmetic.OrphanNum', which may be more \
+                    convenient than wrapping and unwrapping them in \
+                    `Arithmetic`, but this module and `Control.Arithmetic` \
+                    are incompatible.
 license:            BSD-3-Clause
 license-file:       LICENSE
 author:             axionbuster
 maintainer:         axionbuster@gmail.com
--- copyright:
+copyright:          axionbuster
 build-type:         Simple
-extra-doc-files:    CHANGELOG.md
--- extra-source-files:
 
 common warnings
     ghc-options: -Wall
 
 library
-    import:           warnings
-    exposed-modules:  Control.Applicative.Arithmetic
-    -- other-modules:
-    -- other-extensions:
-    default-extensions:  DerivingVia, DefaultSignatures
-    build-depends:    base ^>=4.19.2.0, transformers
-    hs-source-dirs:   src
-    default-language: Haskell2010
+    import:             warnings
+    exposed-modules:    Control.Applicative.Arithmetic,
+                        Control.Applicative.Arithmetic.OrphanNum
+    default-extensions: DerivingVia, DefaultSignatures
+    build-depends:      base ^>=4.19.2.0, transformers ^>= 0.6.1
+    hs-source-dirs:     src
+    default-language:   Haskell2010
