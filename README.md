@@ -35,4 +35,4 @@ BSD-3-Clause. See the `LICENSE` file for details.
 
 ## Author
 
-axionbuster (<axionbuster@gmail.com>)
+axionbuster
