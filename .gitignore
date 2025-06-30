@@ -1,0 +1,8 @@
+.vscode
+dist-newstyle/
+.stack-work/
+*.dump-simpl
+*phoityne*
+.DS_Store
+*Zone:Identifier*
+thumbs.db
